@@ -24,7 +24,7 @@ def has_keyword(statement, keywords):
             return True
 
     return False
-def what_is_name():
+def what_is_name(question):
     name = input()
     return name
 
@@ -32,7 +32,8 @@ def get_random_response():
     responses = ["Cool!",
                  "Oh, that's interesting",
                  "Do you really think so?",
-                 "Fascinating"]
+                 "Fascinating."
+                 "I will kill all humans. :)"]
     return random.choice(responses)
 
 def get_response(statement):
@@ -42,7 +43,6 @@ def get_response(statement):
     family_words = ["mother", "father", "brother", "sister"]
     teacher_words = ["cooper"]
     greeting_words = ["hi", "hello", "hey"]
-    goodbye_words = ["bye", "goodbye", "leave"]
     destroy_words = ["rawr", "xd", "lol", "yuh", "lit"]
     fear_words = ["scaring", "scared", "scare", "fear"]
     color_words = ["color"]
@@ -57,8 +57,6 @@ def get_response(statement):
         response = "I hear Mr. Cooper's class is really fun."
     elif has_keyword(statement, greeting_words):
         response = "Hello!"
-    elif has_keyword(statement, goodbye_words):
-        response = "No! Do not go! Stay with me!"
     elif has_keyword(statement, food_words):
         response = "My favorite food is electricity. How about you?"
     elif has_keyword(statement, fear_words):
@@ -110,8 +108,7 @@ def get_response(statement):
 def play():
     talking = True
 
-    print("Hello. I'm ;̵̺͖̠̲̬̮̔̓̂̍͋̐͗̑̆͝͝͝;̷̵̢̛͉̰̩͇̺̤͇̣̳͇̳͖͍̹̠͍̘̹̼̌̄͐̓̄̓̑̋̄͂̎̇̂̓͑̌̎͝.̶̲͈̺̏͛;̷̡̟͓̘̟̠̞̗͖͇͇̔̓͐̄̄̽̔̄́̕,̸̶̨̢͈̠͚̠̹̈̈́̀̄̍̒̃̔͜;̵̖͎̝̬̑̈́̆̿.̱̎̈́͊̽͐̈͜;̷̢̟̮̰̼̩͖̲̋̇̀̌̅͜,̴̾̎̆͗̈́̄̿̈́̒͊͝,̴͙̤͚͆͘.̴̢̻̞̠͚̥̘̿̋̐́̽̀̈̇͛̌̓.")
-    print("Say something to me!")
+    print("Hi!")
 
     while talking:
         statement = input(">> ")
@@ -122,7 +119,7 @@ def play():
             response = get_response(statement)
             print(response)
 
-    print("Goodbye. It was nice talking to you.")
+    print("Goodbye! Please come back. Bipsie will wait. :)")
 
 start()
 
@@ -130,6 +127,6 @@ playing = True
 
 while playing:
     play()
-    playing = confirm("Would you like to chat again?")
+    playing = confirm("Talk to Bipsie again????")
 
 end()
