@@ -24,12 +24,15 @@ def has_keyword(statement, keywords):
             return True
 
     return False
+def what_is_name():
+    name = input()
+    return name
 
 def get_random_response():
-    responses = ["Uh, huh.",
+    responses = ["Cool!",
                  "Oh, that's interesting",
                  "Do you really think so?",
-                 "Let's talk about you! :)"]
+                 "Fascinating"]
     return random.choice(responses)
 
 def get_response(statement):
@@ -67,7 +70,8 @@ def get_response(statement):
     elif has_keyword(statement, yourname_words):
         response = "My name is Bipsie!"
     elif has_keyword(statement, mynameis):
-        response = "I didn't catch that, what is your name?"
+        response = what_is_name("I did not catch that, what is your name?")
+        print("Hi, " + name + "!")
     elif has_keyword(statement, destroy_words):
         response = print("    ██████╗     ███████╗    ███████╗    ████████╗    ██████╗      ██████╗     ██╗   ██╗")
         response = print("    ██╔══██╗    ██╔════╝    ██╔════╝    ╚══██╔══╝    ██╔══██╗    ██╔═══██╗    ╚██╗ ██╔╝")
