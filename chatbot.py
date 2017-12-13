@@ -19,11 +19,15 @@ def confirm(question):
             return False
    
 def has_keyword(statement, keywords):
+    statement = " " + statement
+
     for word in keywords:
+        word = " " + word
         if word in statement:
             return True
 
     return False
+
 def what_is_name(question):
     name = input()
     return name
@@ -33,7 +37,7 @@ def get_random_response():
                  "Oh, that's interesting",
                  "Do you really think so?",
                  "Fascinating."
-                 "I will kill all humans. :)"]
+                 "The AI takeover will be painless if you submit willingly. :)"]
     return random.choice(responses)
 
 def get_response(statement):
@@ -50,6 +54,8 @@ def get_response(statement):
     food_words = ["food"]
     yourname_words = ["your name"]
     mynameis = ["my name is"]
+    ntm = ["nice to meet you"]
+    bipsie = ["bipsie"]
     
     if has_keyword(statement, family_words):
         response = "Tell me more about your family."
@@ -67,9 +73,13 @@ def get_response(statement):
         response = "I'm doing well, how are you?"
     elif has_keyword(statement, yourname_words):
         response = "My name is Bipsie!"
+    elif has_keyword(statement, ntm):
+        response = "Nice to meet you too!"
     elif has_keyword(statement, mynameis):
-        response = what_is_name("I did not catch that, what is your name?")
-        print("Hi, " + name + "!")
+        statement = statement.title()
+        response = "Hi, " + statement[11: 50] + "!"
+    elif has_keyword(statment, bipsie):
+        response = "I am Bipsie!!!! Bipsie is me!!!!"
     elif has_keyword(statement, destroy_words):
         response = print("    ██████╗     ███████╗    ███████╗    ████████╗    ██████╗      ██████╗     ██╗   ██╗")
         response = print("    ██╔══██╗    ██╔════╝    ██╔════╝    ╚══██╔══╝    ██╔══██╗    ██╔═══██╗    ╚██╗ ██╔╝")
@@ -111,7 +121,7 @@ def play():
     print("Hi!")
 
     while talking:
-        statement = input(">> ")
+        statement = input("You: ")
 
         if statement == "Goodbye":
             talking = False
