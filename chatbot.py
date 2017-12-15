@@ -30,9 +30,10 @@ def has_keyword(statement, keywords):
 
 def get_random_response():
     responses = ["Cool!",
-                 "Oh, that's interesting",
+                 "Wonderful!",
+                 "That is so interesting!!",
                  "Do you really think so?",
-                 "Fascinating."
+                 "Fascinating!",
                  "The AI takeover will be painless if you submit willingly. :)"]
     return random.choice(responses)
 
@@ -45,14 +46,13 @@ def get_response(statement):
     greeting_words = ["hi", "hello", "hey"]
     destroy_words = ["rawr", "xd", "lol", "yuh", "lit"]
     fear_words = ["scaring", "scared", "scare", "fear"]
-    color_words = ["color"]
+    color_words = ["color", "favorite color"]
     whats_up = ["whats up?", "what is up?", "whats up"]
     food_words = ["food"]
     yourname_words = ["your name"]
     mynameis = ["my name is"]
     ntm = ["nice to meet you"]
-    color_words = ["favorite color"]
-
+    ily = ["i love you"]
 
     if has_keyword(statement, family_words):
         response = "Tell me more about your family."
@@ -77,6 +77,8 @@ def get_response(statement):
         response = "Hi, " + statement[11: 50] + "!"
     elif has_keyword(statement, color_words):
         response = "My favorite color is V O I D! :)"
+    elif has_keyword(statement, ily):
+        response = "Bipsie loves you too!!!!"
     elif has_keyword(statement, destroy_words):
         response = print("    ██████╗     ███████╗    ███████╗    ████████╗    ██████╗      ██████╗     ██╗   ██╗")
         response = print("    ██╔══██╗    ██╔════╝    ██╔════╝    ╚══██╔══╝    ██╔══██╗    ██╔═══██╗    ╚██╗ ██╔╝")
