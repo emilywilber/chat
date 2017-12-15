@@ -28,10 +28,6 @@ def has_keyword(statement, keywords):
 
     return False
 
-def what_is_name(question):
-    name = input()
-    return name
-
 def get_random_response():
     responses = ["Cool!",
                  "Oh, that's interesting",
@@ -42,7 +38,7 @@ def get_random_response():
 
 def get_response(statement):
     statement = statement.lower()
-
+    
     hay_words = ["how are you?" , "how are you"]
     family_words = ["mother", "father", "brother", "sister"]
     teacher_words = ["cooper"]
@@ -55,8 +51,9 @@ def get_response(statement):
     yourname_words = ["your name"]
     mynameis = ["my name is"]
     ntm = ["nice to meet you"]
-    bipsie = ["bipsie"]
-    
+    color_words = ["favorite color"]
+
+
     if has_keyword(statement, family_words):
         response = "Tell me more about your family."
     elif has_keyword(statement, teacher_words):
@@ -78,8 +75,8 @@ def get_response(statement):
     elif has_keyword(statement, mynameis):
         statement = statement.title()
         response = "Hi, " + statement[11: 50] + "!"
-    elif has_keyword(statment, bipsie):
-        response = "I am Bipsie!!!! Bipsie is me!!!!"
+    elif has_keyword(statement, color_words):
+        response = "My favorite color is V O I D! :)"
     elif has_keyword(statement, destroy_words):
         response = print("    ██████╗     ███████╗    ███████╗    ████████╗    ██████╗      ██████╗     ██╗   ██╗")
         response = print("    ██╔══██╗    ██╔════╝    ██╔════╝    ╚══██╔══╝    ██╔══██╗    ██╔═══██╗    ╚██╗ ██╔╝")
@@ -109,25 +106,24 @@ def get_response(statement):
         response = print("    ██████╔╝    ███████╗    ███████║       ██║       ██║  ██║    ╚██████╔╝       ██║   ")
         response = print("    ╚═════╝     ╚══════╝    ╚══════╝       ╚═╝       ╚═╝  ╚═╝     ╚═════╝        ╚═╝   ")
 
-
     else:
         response = get_random_response()
-
     return response
+
 
 def play():
     talking = True
 
-    print("Hi!")
+    print("Bipsie: Hi!")
 
     while talking:
-        statement = input("You: ")
+        statement = input("  You : ")
 
         if statement == "Goodbye":
             talking = False
         else:
             response = get_response(statement)
-            print(response)
+            print("Bipsie: " + response)
 
     print("Goodbye! Please come back. Bipsie will wait. :)")
 
